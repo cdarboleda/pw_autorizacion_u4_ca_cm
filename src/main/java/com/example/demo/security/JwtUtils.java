@@ -23,7 +23,7 @@ public class JwtUtils {
 	@Value("${app.jwt.expiration.ms}")
 	private int jwtExpiration;
 	
-	public String generateJwtToken(Authentication authentication, String nombre) {
+	public String generateJwtToken(String nombre) {
 		//Es lo que va en el payload, el Subject
 		LOG.info("semilla: "+jwtSecret + " tiempo: " + jwtExpiration);
 		return Jwts.builder()
